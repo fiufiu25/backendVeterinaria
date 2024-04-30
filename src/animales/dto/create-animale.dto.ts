@@ -9,12 +9,14 @@ export class CreateAnimaleDto {
     @IsOptional()
     @IsDate()
     fecha:Date;
-    @IsOptional()
+    
     @IsString()
     tipo:string;
     @IsOptional()
     @IsString()
     descripcion:string;
+    @IsString()
+    genero:string
 
     
  

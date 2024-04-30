@@ -21,12 +21,12 @@ export class AnimalesService {
     private  readonly  categoriaService:CategoriaService
     ,
   ){}
-  async create(files: Express.Multer.File[],data,{nombre,edad,tipo,descripcion}: CreateAnimaleDto) {
+  async create(files: Express.Multer.File[],data,{nombre,edad,tipo,descripcion,genero}: CreateAnimaleDto) {
      console.log("olitas que me botas",files)
     const animals= await this.userService.findByEmail(data.email)
    
     const  animalCategoria= await this.categoriaService.findOne(tipo)
-     const enviarAnimal= await this.animalModuel.save({nombre,descripcion,fecha:new Date(),user:animals,edad,categoria:animalCategoria});
+     const enviarAnimal= await this.animalModuel.save({nombre,descripcion,genero,fecha:new Date(),user:animals,edad,categoria:animalCategoria});
      await this.enviarImagen(files,enviarAnimal)
      
     return enviarAnimal
