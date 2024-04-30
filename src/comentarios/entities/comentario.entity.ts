@@ -10,7 +10,7 @@ export class Comentario {
     @Column()
     comentario:string
     
-    @Column({ type: 'datetime' })
+    @Column({ type: "timestamp" })
     date:Date;
     @ManyToOne(() => User, user => user.id,{eager:true,})
     user: User; 

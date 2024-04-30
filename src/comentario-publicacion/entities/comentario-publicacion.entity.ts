@@ -8,7 +8,7 @@ export class ComentarioPublicacion {
 id:number;
 @Column()
 comentario:string;
-@Column({type:"datetime"})
+@Column({type:"timestamp"})
 date:Date;
 @ManyToOne(()=>Comentario,comentario=>comentario.id,{eager:true,})
 comentarios: Comentario;
