@@ -25,7 +25,7 @@ async  create(user,{comentario,idPublicacion}: CreateComentarioPublicacionDto) {
   }
 
   findAll() {
-    return  this.comentarioPublicacionRepository.find({relations:["user"]});
+    return  this.comentarioPublicacionRepository.find({relations:["user"],order:{id:"DESC"}});
   }
 
   findOne(id: number) {
